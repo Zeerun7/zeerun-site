@@ -7,14 +7,25 @@
   <title>{{PAGE_TITLE}}</title>
   <!-- SLOT: META_DESCRIPTION — one sentence, ~150 chars, plain language -->
   <meta name="description" content="{{META_DESCRIPTION}}">
-  <!-- SLOT: OG tags — mirror title/description; og:image can stay as logo -->
+  <!-- SLOT: CANONICAL — absolute post URL, e.g. https://zeerun.netlify.app/blog/posts/my-post.html -->
+  <link rel="canonical" href="{{CANONICAL}}">
+  <meta property="og:url" content="{{CANONICAL}}">
+  <!-- SLOT: OG tags — mirror title/description -->
   <meta property="og:title" content="{{OG_TITLE}}">
   <meta property="og:description" content="{{OG_DESCRIPTION}}">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="../../images/logo.png">
+  <meta property="og:image" content="https://zeerun.netlify.app/images/logo.png">
   <meta name="theme-color" content="#0B1526">
   <link rel="icon" type="image/png" href="../../images/logo.png">
   <link rel="stylesheet" href="../../styles.css">
+  <!-- SLOT: JSON-LD — fill headline, description, datePublished (YYYY-MM-DD), author stays ZeeRun -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article",
+   "headline":"{{JSONLD_HEADLINE}}","description":"{{JSONLD_DESCRIPTION}}",
+   "datePublished":"{{DATE_PUBLISHED}}","author":{"@type":"Organization","name":"ZeeRun"},
+   "publisher":{"@type":"Organization","name":"ZeeRun","logo":{"@type":"ImageObject","url":"https://zeerun.netlify.app/images/logo.png"}},
+   "mainEntityOfPage":{"@type":"WebPage","@id":"{{CANONICAL}}"}}
+  </script>
 </head>
 <body>
 
