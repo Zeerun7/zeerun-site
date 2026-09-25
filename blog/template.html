@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SLOT: PAGE_TITLE — e.g. "Shin Splints: The Runner's Guide | ZeeRun Blog" -->
+  <title>{{PAGE_TITLE}}</title>
+  <!-- SLOT: META_DESCRIPTION — one sentence, ~150 chars, plain language -->
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <!-- SLOT: OG tags — mirror title/description; og:image can stay as logo -->
+  <meta property="og:title" content="{{OG_TITLE}}">
+  <meta property="og:description" content="{{OG_DESCRIPTION}}">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="../../images/logo.png">
+  <meta name="theme-color" content="#0B1526">
+  <link rel="icon" type="image/png" href="../../images/logo.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../index.html">
+      <img src="../../images/logo.png" alt="ZeeRun logo">
+      ZeeRun
+    </a>
+    <nav class="nav">
+      <a href="../../index.html#features">Features</a>
+      <a href="../../index.html#pricing">Pricing</a>
+      <a href="../index.html">Blog</a>
+      <a href="../../about.html">About</a>
+      <a class="btn-small" href="../../index.html#download">Get the app</a>
+    </nav>
+  </div>
+</header>
+
+<!-- SLOT: POST_HERO — kicker (category), h1 (post title), meta line (date · read time) -->
+<section class="post-hero">
+  <div class="wrap">
+    <span class="kicker">{{POST_KICKER}}</span>
+    <h1>{{POST_TITLE}}</h1>
+    <p class="post-meta">{{POST_DATE}} · {{READ_TIME}} min read · By the ZeeRun team</p>
+  </div>
+</section>
+
+<!-- SLOT: POST_BODY — the article. Use h2 for sections, h3 for subsections,
+     p for paragraphs, ul/ol for lists, blockquote for pull quotes.
+     Optional: <div class="verdict-box"><h3>...</h3><p>...</p></div> for callouts. -->
+<article class="post-body">
+{{POST_BODY}}
+  <div class="post-cta">
+    <h2>Train around niggles, not through them.</h2>
+    <p>ZeeRun gives you a daily run / modify / stop verdict based on how your body actually feels. Free on iOS &amp; Android.</p>
+    <a class="btn" href="../../index.html#download">Get ZeeRun free</a>
+  </div>
+</article>
+
+<!-- SLOT: POST_NAV — prev/next links; delete a link if none exists -->
+<nav class="post-nav">
+  <a href="{{PREV_URL}}">← {{PREV_TITLE}}</a>
+  <a href="{{NEXT_URL}}">{{NEXT_TITLE}} →</a>
+</nav>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="../../images/logo.png" alt="ZeeRun logo"> ZeeRun</div>
+        <p>The run coach that listens to your body. Injury-aware training plans for runners who'd rather adapt than break.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="../../index.html#features">Features</a>
+        <a href="../../index.html#pricing">Pricing</a>
+        <a href="../index.html">Blog</a>
+        <a href="../../about.html">About</a>
+      </div>
+      <div>
+        <h4>Get the app</h4>
+        <a href="https://apps.apple.com/us/app/zeerun-run-tracker-coach/id6796361407">App Store</a>
+        <!-- PLAY_STORE_PLACEHOLDER -->
+        <a href="https://play.google.com/store/apps/details?id=app.rork.al76njhtzkys2uwgfuv7o&pcampaignid=web_share">Google Play</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ZeeRun. Train smart.</span>
+      <span>Not medical advice. When in doubt, see a clinician.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
